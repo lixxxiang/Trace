@@ -34,7 +34,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compile 'com.orhanobut:logger:1.15'
-
+    compile 'com.blankj:utilcode:1.13.5'
 }
 repositories {
     mavenCentral()

@@ -31,6 +31,7 @@ import com.baidu.location.*
 import com.baidu.mapapi.SDKInitializer
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.model.LatLng
+import com.blankj.utilcode.util.Utils
 import com.example.lixiang.trace3.R.id.end
 import com.example.lixiang.trace3.R.string.start
 import com.example.lixiang.trace3.util.SpannableBuilder
@@ -93,6 +94,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         SDKInitializer.initialize(applicationContext)
         setContentView(R.layout.activity_main)
+        Utils.init(application)
         mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         handlePermisson()
         initMap()
