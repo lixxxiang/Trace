@@ -31,6 +31,9 @@ import com.baidu.location.*
 import com.baidu.mapapi.SDKInitializer
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.model.LatLng
+import com.example.lixiang.trace3.R.id.end
+import com.example.lixiang.trace3.R.string.start
+import com.example.lixiang.trace3.util.SpannableBuilder
 
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -110,6 +113,24 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
             mTraceClient.queryHistoryTrack(historyTrackRequest, mTrackListener)
         }
+        getTime()
+
+        tv1.text = SpannableBuilder.create(this)
+                .append("距离上班时间还有 ",R.dimen.text_size, R.color.gray)
+                .append("ooo", R.dimen.text_size, R.color.red)
+                .build()
+        start_rl.setOnClickListener {
+            start_rl.visibility = View.INVISIBLE
+            end_rl.visibility = View.VISIBLE
+        }
+        end_rl.setOnClickListener {
+            start_rl.visibility = View.VISIBLE
+            end_rl.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun getTime() {
+
     }
 
     private fun initMap() {
