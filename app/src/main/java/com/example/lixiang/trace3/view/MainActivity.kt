@@ -31,6 +31,7 @@ import com.baidu.location.*
 import com.baidu.mapapi.SDKInitializer
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.model.LatLng
+import com.blankj.utilcode.util.TimeUtils
 import com.blankj.utilcode.util.Utils
 import com.example.lixiang.trace3.R.id.end
 import com.example.lixiang.trace3.R.string.start
@@ -119,7 +120,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         tv1.text = SpannableBuilder.create(this)
                 .append("距离上班时间还有 ",R.dimen.text_size, R.color.gray)
-                .append("ooo", R.dimen.text_size, R.color.red)
+                .append(TimeUtils.millis2String(System.currentTimeMillis()), R.dimen.text_size, R.color.red)
                 .build()
         start_rl.setOnClickListener {
             start_rl.visibility = View.INVISIBLE
